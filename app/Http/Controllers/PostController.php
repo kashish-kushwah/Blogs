@@ -14,6 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
+        
      $items = Post::where('user_id', auth()->user()->id)->paginate(10)->onEachSide(2);
      return view("post.index",['items' => $items]);
     }
